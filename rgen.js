@@ -22,7 +22,9 @@ define(function(require) {
     rgen will be a single object with
        - algorithms property
        - setAlgorithm function
-       - distributions property (uniform, normal, etc.)
+       - distributions property (uniform, normal, etc.) -- for example,
+       rgen.distributions.normal takes mean and standard deviation and returns
+       a random number from the corresponding normal distribution
        - setSeed function (from the current algorithm)
        - random function (from the current algorithm)
 
@@ -30,7 +32,7 @@ define(function(require) {
     rgen.setSeed or rgen.random will use that algorithm
    */
 
-   var rgen;
+   var rgen, slgc;
    rgen = {
       algorithms: {},
       distributions: {},
@@ -43,7 +45,8 @@ define(function(require) {
       },
       setAlgorithm: function(name) {
          // "name" encapsulates some simple options like precision
-         mixin(rgen, rgen.algorithms[name]);
+         rgen.random = rgen.algorithms[name].random;
+         rgen.setSeed = rgen.algorithms[name].setSeed;
          return rgen.setRandomSeed();
       },
       getAlgorithms: function() {
@@ -54,6 +57,13 @@ define(function(require) {
    rgen.setRandomSeed = function() {
       return rgen.setSeed(new Date());
    };
+
+   // Load Algorithms
+   slgc = require('./algorithms/slgc');
+   rgen.algorithms.slgc = slgc(16807, 0, Math.pow(2, 31) - 1);
+   rgen.setAlgorithm('slgc');
+
+   // Load Distributions
 
    return rgen;
 });

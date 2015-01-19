@@ -32,7 +32,7 @@ define(function(require) {
     rgen.setSeed or rgen.random will use that algorithm
    */
 
-   var rgen, slgc;
+   var rgen, slcg;
    rgen = {
       algorithms: {},
       distributions: {},
@@ -59,9 +59,9 @@ define(function(require) {
    };
 
    // Load Algorithms
-   slgc = require('./algorithms/slgc');
-   rgen.algorithms.slgc = slgc(16807, 0, Math.pow(2, 31) - 1);
-   rgen.setAlgorithm('slgc');
+   slcg = require('./algorithms/slcg');
+   rgen.algorithms.slcg = slcg(16807, 0, Math.pow(2, 31) - 1);
+   rgen.setAlgorithm('slcg');
 
    // Load Distributions
 

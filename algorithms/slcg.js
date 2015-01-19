@@ -1,7 +1,7 @@
 (function(define) {'use strict';
 define(function(require) {
 
-   function slgc(a, c, m) {
+   function slcg(a, c, m) {
       var x, q, r;             // x is the seed
       q = Math.floor(m / a);
       r = m % a;
@@ -24,7 +24,7 @@ define(function(require) {
       };
    }
 
-   return slgc;
+   return slcg;
 });
 
 }(typeof define === 'function' && define.amd ? define : function(factory) {

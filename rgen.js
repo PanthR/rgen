@@ -32,10 +32,10 @@ define(function(require) {
     rgen.setSeed or rgen.random will use that algorithm
    */
 
-   var rgen, slcg;
+   var rgen, slcg, distributions;
+   distributions = require('./distributions');
    rgen = {
       algorithms: {},
-      distributions: {},
       setSeed: function(i) {
          throw new Error('need to select an algorithm first');
          // return rgen;
@@ -64,6 +64,9 @@ define(function(require) {
    rgen.setAlgorithm('slcg');
 
    // Load Distributions
+   Object.keys(distributions).forEach(function(key) {
+      rgen[key] = distributions[key];
+   });
 
    return rgen;
 });

@@ -1,9 +1,11 @@
 (function(define) {'use strict';
 define(function(require) {
 
-// distributions.js
-   return {
-      uniform: require('./distributions/uniform')
+// uniform.js
+
+   // requires both parameters with a < b
+   return function(a, b) {
+      return a + (b - a) * this.random();
    };
 
 });

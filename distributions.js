@@ -3,7 +3,8 @@ define(function(require) {
 
 // distributions.js
    return {
-      uniform: require('./distributions/uniform')
+      uniform: require('./distributions/uniform'),
+      normal: require('./distributions/normal')
    };
 
 });

@@ -5,7 +5,8 @@ define(function(require) {
    return {
       uniform: require('./distributions/uniform'),
       normal: require('./distributions/normal'),
-      binomial: require('./distributions/binomial')
+      binomial: require('./distributions/binomial'),
+      discrete: require('./distributions/discrete')
    };
 
 });

@@ -4,7 +4,8 @@ define(function(require) {
 // distributions.js
    return {
       uniform: require('./distributions/uniform'),
-      normal: require('./distributions/normal')
+      normal: require('./distributions/normal'),
+      binomial: require('./distributions/binomial')
    };
 
 });

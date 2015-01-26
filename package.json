@@ -5,7 +5,7 @@
    "main": "rgen.js",
    "scripts": {
       "test": "mocha --reporter=progress --recursive",
-      "lint": "eslint rgen",
+      "lint": "eslint .",
       "doc": "node ./node_modules/panthrdoc/run.js ."
    },
    "repository": {
@@ -43,7 +43,6 @@
    "homepage": "https://github.com/PanthR/panthrBase",
    "devDependencies": {
       "chai": "^1.9.1",
-      "eslint": "^0.7.4",
       "mocha": "~1.21.3",
       "panthrdoc": "*",
       "sinon": "^1.10.3",

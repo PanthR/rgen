@@ -7,7 +7,8 @@ define(function(require) {
       normal: require('./distributions/normal'),
       binomial: require('./distributions/binomial'),
       discrete: require('./distributions/discrete'),
-      exponential: require('./distributions/exponential')
+      exponential: require('./distributions/exponential'),
+      gamma: require('./distributions/gamma')
    };
 
 });

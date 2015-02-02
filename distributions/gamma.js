@@ -9,10 +9,10 @@ define(function(require) {
    // alpha for 'shape', beta for 'scale'
    return function(alpha, beta) {
       if (alpha < 1) {
-         return gammaBest(alpha, beta);
+         return gammaBest.call(this, alpha, beta);
       }
       if (alpha > 1) {
-         return gammaCheng(alpha, beta);
+         return gammaCheng.call(this, alpha, beta);
       }
       return exponential(1 / beta);
    };

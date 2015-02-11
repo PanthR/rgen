@@ -47,29 +47,14 @@ define(function(require) {
 
    // alpha > 1:  Cheng/Feast Algorithm
    function gammaCheng(alpha, beta) {
-      var u1, u2, v, c2;
-      /* eslint-disable no-constant-condition */
-      while (true) {
-      /* eslint-enable */
-         u1 = this.random();
-         u2 = this.random();
-         c2 = (alpha - 1 / (6 * alpha)) / (alpha - 1);
-         v = c2 * u1 / u2;
-         if (2 * (u2 - 1) / (alpha - 1) + v + 1 / v <= 2 ||
-             2 * Math.log(u2) / (alpha - 1) - Math.log(v) + v < 1) {
-            return (alpha - 1) * v * beta;
-         }
-      }
-   }
-
-   // alpha > 1:  trying again with more local variables
-   function gammaCheng2(alpha, beta) {
       var c1, c2, c3, c4, u1, u2, w;
       c1 = alpha - 1;
       c2 = (alpha - 1 / (6 * alpha)) / c1;
       c3 = 2 / c1;
       c4 = c3 + 2;
+      /* eslint-disable no-constant-condition */
       while (true) {
+      /* eslint-enable */
          u1 = this.random();
          u2 = this.random();
          w = c2 * u2 / u1;

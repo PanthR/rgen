@@ -31,7 +31,7 @@ define(function(require) {
          if (v <= 1) {
             x = t * Math.pow(v, 1 / alpha);
             if (u2 <= (2 - x) / (2 + x) || u2 <= Math.exp(-x)) {
-               return x;
+               return x * beta;
             }
          } else {
             x = -Math.log(t * (b - v) / alpha);
@@ -39,7 +39,7 @@ define(function(require) {
             if (u2 * (alpha + y * (1 - alpha)) <= 1 ||
                 u2 <= Math.pow(y, alpha - 1))
             {
-               return x;
+               return x * beta;
             }
          }
       }
@@ -57,7 +57,7 @@ define(function(require) {
          v = c2 * u1 / u2;
          if (2 * (u2 - 1) / (alpha - 1) + v + 1 / v <= 2 ||
              2 * Math.log(u2) / (alpha - 1) - Math.log(v) + v < 1) {
-            return (alpha - 1) * v;
+            return (alpha - 1) * v * beta;
          }
       }
    }
@@ -74,10 +74,10 @@ define(function(require) {
          u2 = this.random();
          w = c2 * u2 / u1;
          if (c3 * u1 + w + 1 / w <= c4) {
-            return c1 * w;
+            return c1 * w * beta;
          }
          if (c3 * Math.log(u1) - Math.log(w) + w < 1) {
-            return c1 * w;
+            return c1 * w * beta;
          }
       }
    }

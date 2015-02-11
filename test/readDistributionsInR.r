@@ -13,8 +13,8 @@ processDistr = function(n) {
 processed = lapply(results, processDistr)
 summaries = lapply(processed, function(distr) { sapply(distr, summary )})
 plotDistr = function(distr) {
-   h1 = hist(distr$result.r, breaks = 15, plot=FALSE)
-   h2 = hist(distr$result.js, breaks = 15, plot=FALSE)
+   h1 = hist(distr$result.r, breaks = 20, plot=FALSE)
+   h2 = hist(distr$result.js, breaks = 20, plot=FALSE)
    h2$counts = - h2$counts
    hmax = max(h1$counts)
    hmin = min(h2$counts)

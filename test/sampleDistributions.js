@@ -59,6 +59,13 @@ var specification = {
          "params": [
             { "name": "df", "value": 10 }
          ]
+      },
+      "t": {
+         "function": "t",
+         "rfunction": "rt",
+         "params": [
+            { "name": "df", "value": 10 }
+         ]
       }
    }
 };

@@ -9,7 +9,8 @@ define(function(require) {
       discrete: require('./distributions/discrete'),
       exponential: require('./distributions/exponential'),
       gamma: require('./distributions/gamma'),
-      chisquared: require('./distributions/chisquared')
+      chisquared: require('./distributions/chisquared'),
+      t: require('./distributions/t')
    };
 
 });

@@ -8,7 +8,8 @@ define(function(require) {
       binomial: require('./distributions/binomial'),
       discrete: require('./distributions/discrete'),
       exponential: require('./distributions/exponential'),
-      gamma: require('./distributions/gamma')
+      gamma: require('./distributions/gamma'),
+      chisquared: require('./distributions/chisquared')
    };
 
 });

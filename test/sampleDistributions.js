@@ -52,6 +52,13 @@ var specification = {
          "params": [
             { "name": "rate", "value": 3 }
          ]
+      },
+      "chisquared": {
+         "function": "chisquared",
+         "rfunction": "rchisq",
+         "params": [
+            { "name": "df", "value": 10 }
+         ]
       }
    }
 };

@@ -38,9 +38,9 @@
    ],
    "license": "MIT",
    "bugs": {
-      "url": "https://github.com/PanthR/panthrBase/issues"
+      "url": "https://github.com/PanthR/rgen/issues"
    },
-   "homepage": "https://github.com/PanthR/panthrBase",
+   "homepage": "https://github.com/PanthR/rgen",
    "devDependencies": {
       "chai": "^1.9.1",
       "mocha": "~1.21.3",

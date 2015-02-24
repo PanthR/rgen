@@ -4,13 +4,22 @@ define(function(require) {
 // binomial.js
 
    // Sum of repeated Bernoulli trials
+   function bernoulliDirect(n, p) {
+      return function() {
+         var k, i;
+         k = 0;
+         for (i = 0; i < n; i += 1) {
+            k += this.random() < p ? 1 : 0;
+         }
+         return k;
+      };
+   }
+
    return function(n, p) {
-      var k, i;
-      k = 0;
-      for (i = 0; i < n; i += 1) {
-         k += this.random() < p ? 1 : 0;
+      if (n < 30) {
+         return bernoulliDirect(n, p).bind(this);
       }
-      return k;
+      return bernoulliDirect(n, p).bind(this);
    };
 });
 

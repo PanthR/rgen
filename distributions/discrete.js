@@ -9,14 +9,16 @@ define(function(require) {
 
    // Uses chop-down search
    return function(arr) {
-      var u, k;
-      u = this.random();
-      k = 0;
-      while (u > arr[k]) {
-         u -= arr[k];
-         k += 1;
-      }
-      return k;
+      return function() {
+         var u, k;
+         u = this.random();
+         k = 0;
+         while (u > arr[k]) {
+            u -= arr[k];
+            k += 1;
+         }
+         return k;
+      }.bind(this);
    };
 
 });

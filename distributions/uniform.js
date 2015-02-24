@@ -5,7 +5,9 @@ define(function(require) {
 
    // requires both parameters with a < b
    return function(a, b) {
-      return a + (b - a) * this.random();
+      return function() {
+         return a + (b - a) * this.random();
+      }.bind(this);
    };
 
 });

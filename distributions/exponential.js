@@ -5,7 +5,9 @@ define(function(require) {
 
    // Uses inverse cdf
    return function(lambda) {
-      return -Math.log(this.random()) / lambda;
+      return function() {
+         return -Math.log(this.random()) / lambda;
+      }.bind(this);
    };
 
 });

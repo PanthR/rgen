@@ -5,12 +5,12 @@ var print = true;  // Disable to reduce console.logs
 
 describe('binomial', function() {
    it('returns integer values in [0, n]', function() {
-      var i, v, n, p;
+      var i, v, f, n, p;
       n = 20;
       p = Math.random();
-      v;
+      f = rgen.binomial(n, p);
       for(i = 0; i < 100; i += 1) {
-         v = rgen.binomial(n, p);
+         v = f();
          expect(v).to.be.within(0, n);
          expect(Math.floor(v)).to.equal(v);
       }

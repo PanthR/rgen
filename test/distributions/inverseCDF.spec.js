@@ -23,10 +23,10 @@ describe('inverseCDF', function() {
          this.prob = .3;
          return true;
       }
-      rgen.testFunction = inverseCDF(getMode, updateLeft, updateRight);
+      var testFunction = inverseCDF.call(rgen, getMode, updateLeft, updateRight);
       var arr = [];
       for (var i = 0; i < 10000; i += 1) {
-         arr.push(rgen.testFunction());
+         arr.push(testFunction());
       }
       console.log("mean is", arr.reduce(function(acc, v) {
          return acc + v;

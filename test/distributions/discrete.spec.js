@@ -8,9 +8,9 @@ describe('discrete', function() {
       var i, v, n, parr;
       n = 20;
       parr = [0.35, 0.15, 0.5];
-      v;
+      f = rgen.discrete(parr);
       for(i = 0; i < 300; i += 1) {
-         v = rgen.discrete(parr);
+         v = f();
          expect(v).to.be.within(0, parr.length - 1);
          expect(Math.floor(v)).to.equal(v);
       }

@@ -4,7 +4,7 @@
 
 var specification = {
    "filename": "sampleResults.json",
-   "sampleSize": 5000,
+   "sampleSize": 20000,
    "distributions": {
       "normal": {
          "function": "normal",
@@ -73,18 +73,19 @@ var specification = {
 var fs = require('fs');
 
 var rgen = require('./../rgen');
-var results = {}, arr;
+var results = {};
 var reps = specification.sampleSize;
 
 Object.keys(specification.distributions).forEach(function(key) {
    console.log("Simulating: " + key);
-   var time = new Date();
-   var spec = specification.distributions[key];
-   var func = rgen[spec.function];
-   var params = spec.params.map(function(o) { return o.value; });
+   var arr, time, spec, params, func;
+   time = new Date();
+   spec = specification.distributions[key];
+   params = spec.params.map(function(o) { return o.value; });
+   func = rgen[spec.function].apply(rgen, params);
    arr = [];
    while (arr.length < reps) {
-      arr.push(func.apply(rgen, params));
+      arr.push(func());
    }
    results[key] = {
       "params": spec.params,

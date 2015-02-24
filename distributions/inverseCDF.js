@@ -12,14 +12,19 @@ define(function(require) {
    // object (for continuing the search, using the pdf for the distribution)
    // and return true iff the search can continue in that direction.
    return function(getMode, updateLeft, updateRight) {
+      var mode, left, right;
+
+      mode = getMode.apply(this, arguments);
+      left = { update: updateLeft };
+      right = { update: updateRight };
+
       return function() {
-         var left, right, current, u;
-         left = getMode.apply(this, arguments);
-         left.update = updateLeft;
-         right = { val: left.val,
-                  prob: left.prob,
-                  update: updateRight};
+         var current, u;
+
+         left.val = right.val = mode.val;
+         left.prob = right.prob = mode.prob;
          current = right;
+
          u = this.random();
          do {
             if ( u <= current.prob ) { return current.val; }
@@ -29,7 +34,7 @@ define(function(require) {
                getNext(left, right);
          } while (u >= 0);
          throw new Error('total probability exceeds 1');
-      };
+      }.bind(this);
    };
 
    function getNext(first, second) {

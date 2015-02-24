@@ -5,11 +5,12 @@ var print = true;  // Disable to reduce console.logs
 
 describe('uniform', function() {
    it('returns values in [a, b]', function() {
-      var i;
-      var a = Math.random();
-      var b = a + 5 * Math.random();
+      var i, f, a, b;
+      a = Math.random();
+      b = a + 5 * Math.random();
+      f = rgen.uniform(a, b);
       for(i = 0; i < 100; i += 1) {
-         expect(rgen.uniform(a, b)).to.be.within(a, b);
+         expect(f()).to.be.within(a, b);
       }
    });
 });

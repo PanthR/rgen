@@ -49,5 +49,6 @@
       "sinon-chai": "^2.5.0"
    },
    "dependencies": {
+      "panthrMath": "*"
    }
 }

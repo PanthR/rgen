@@ -42,7 +42,7 @@ var specification = {
          "function": "binomial",
          "rfunction": "rbinom",
          "params": [
-            { "name": "size", "value": 20 },
+            { "name": "size", "value": 40 },
             { "name": "prob", "value": 0.35 }
          ]
       },

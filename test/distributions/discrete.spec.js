@@ -5,7 +5,7 @@ var print = true;  // Disable to reduce console.logs
 
 describe('discrete', function() {
    it('returns integer values in [0, len - 1]', function() {
-      var i, v, n, parr;
+      var i, v, f, n, parr;
       n = 20;
       parr = [0.35, 0.15, 0.5];
       f = rgen.discrete(parr);

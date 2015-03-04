@@ -66,6 +66,13 @@ var specification = {
          "params": [
             { "name": "df", "value": 10 }
          ]
+      },
+      "geometric": {
+         "function": "geometric",
+         "rfunction": "rgeom",
+         "params": [
+            { "name": "prob", "value": 0.6 }
+         ]
       }
    }
 };

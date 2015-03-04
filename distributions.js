@@ -10,7 +10,8 @@ define(function(require) {
       exponential: require('./distributions/exponential'),
       gamma: require('./distributions/gamma'),
       chisquared: require('./distributions/chisquared'),
-      t: require('./distributions/t')
+      t: require('./distributions/t'),
+      geometric: require('./distributions/geometric')
    };
 
 });

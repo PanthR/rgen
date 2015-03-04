@@ -7,7 +7,7 @@ define(function(require) {
        inverseCDF = require('./inverseCDF');
 
    // Using inverseCDF
-   function bernoulliInvCDF(n, p) {
+   function binomialInvCDF(n, p) {
       var mode;
 
       mode = { val: Math.floor(n * p) };
@@ -46,7 +46,7 @@ define(function(require) {
       if (n < 30) {
          return bernoulliDirect(n, p).bind(this);
       }
-      return bernoulliInvCDF.call(this, n, p);
+      return binomialInvCDF.call(this, n, p);
    };
 });
 

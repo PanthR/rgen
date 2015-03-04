@@ -8,7 +8,8 @@ processDistr = function(n) {
    command = paste(n$func, "(", count, ",", args, ")", sep="")
    list(command=parse(text=command),
         result.r = eval(parse(text=command)),
-        result.js = n$values)
+        result.js = n$values,
+        name = n$name)
 }
 processed = lapply(results, processDistr)
 summaries = lapply(processed, function(distr) { sapply(distr, summary )})
@@ -21,7 +22,7 @@ plotDistr = function(distr) {
    X = c(h1$breaks, h2$breaks)
    xmax = max(X)
    xmin = min(X)
-   plot(h1, ylim=c(hmin, hmax), col="green", xlim=c(xmin, xmax))
+   plot(h1, ylim=c(hmin, hmax), col="green", xlim=c(xmin, xmax), main = distr$name)
    lines(h2, col="blue")
 }
 ncols = 3

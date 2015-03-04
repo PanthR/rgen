@@ -90,6 +90,7 @@ Object.keys(specification.distributions).forEach(function(key) {
    results[key] = {
       "params": spec.params,
       "func": spec.rfunction,
+      "name": spec.function,
       "values": arr
    };
    console.log("Done in: " + (new Date() - time) + "ms");

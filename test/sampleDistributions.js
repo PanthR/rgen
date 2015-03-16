@@ -73,6 +73,20 @@ var specification = {
          "params": [
             { "name": "prob", "value": 0.6 }
          ]
+      },
+      "poisson": {
+         "function": "poisson",
+         "rfunction": "rpois",
+         "params": [
+            { "name": "lambda", "value": 32.3 }
+         ]
+      },
+      "poisson2": {
+         "function": "poisson",
+         "rfunction": "rpois",
+         "params": [
+            { "name": "lambda", "value": 2.1 }
+         ]
       }
    }
 };

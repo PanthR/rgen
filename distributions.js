@@ -11,7 +11,8 @@ define(function(require) {
       gamma: require('./distributions/gamma'),
       chisquared: require('./distributions/chisquared'),
       t: require('./distributions/t'),
-      geometric: require('./distributions/geometric')
+      geometric: require('./distributions/geometric'),
+      poisson: require('./distributions/poisson')
    };
 
 });
